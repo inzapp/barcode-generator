@@ -16,8 +16,8 @@ public class BarcodeGenerator {
 
     public static void main(String[] args) {
         BarcodeGenerator barcodeGenerator = new BarcodeGenerator();
-        barcodeGenerator.setBasePath("barcode/");
-        String filePath = barcodeGenerator.getBarcodePath("1234567890");
+        barcodeGenerator.setBasePath("barcode");
+        String filePath = barcodeGenerator.generate("ajGJ09a8sd)(8ASD8a0d");
         System.out.println(filePath);
     }
 
@@ -26,39 +26,20 @@ public class BarcodeGenerator {
     }
 
     public void setBasePath(String basePath) {
-        basePath = basePath.replaceAll("/", "\\\\");
-        if (!basePath.endsWith("\\"))
-            basePath += "\\";
-        this.basePath = basePath;
+        this.basePath = this.convertPath(basePath);
     }
 
-    public int getBarcodeWidth() {
-        return this.barcodeWidth;
+    public String generate(String content) {
+        return this.generate(content, this.basePath);
     }
 
-    public void setBarcodeWidth(int barcodeWidth) {
-        this.barcodeWidth = barcodeWidth;
+    public String generate(String content, String basePath) {
+        return this.generate(content, this.convertPath(basePath), this.barcodeWidth, this.barcodeHeight);
     }
 
-    public int getBarcodeHeight() {
-        return this.barcodeHeight;
-    }
-
-    public void setBarcodeHeight(int barcodeHeight) {
-        this.barcodeHeight = barcodeHeight;
-    }
-
-    public String getBarcodePath(String content) {
-        return this.getBarcodePath(content, this.basePath);
-    }
-
-    public String getBarcodePath(String content, String basePath) {
-        return this.getBarcodePath(content, basePath, this.barcodeWidth, this.barcodeHeight);
-    }
-
-    public String getBarcodePath(String content, String basePath, int barcodeWidth, int barcodeHeight) {
+    public String generate(String content, String basePath, int barcodeWidth, int barcodeHeight) {
         try {
-            File barcodeImgFile = new File(basePath + content + ".png");
+            File barcodeImgFile = new File(this.convertPath(basePath) + content + ".png");
             if (barcodeImgFile.exists())
                 return barcodeImgFile.getAbsolutePath();
 
@@ -68,11 +49,19 @@ public class BarcodeGenerator {
                 for (int y = 0; y < barcodeHeight; ++y)
                     bufferedImage.setRGB(x, y, bitMatrix.get(x, 0) ? Byte.MIN_VALUE : Byte.MAX_VALUE);
             }
+
             ImageIO.write(bufferedImage, "png", barcodeImgFile);
             return barcodeImgFile.getAbsolutePath();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
+    }
+
+    private String convertPath(String path) {
+        path = path.replaceAll("/", "\\\\");
+        if (!path.endsWith("\\"))
+            path += "\\";
+        return path;
     }
 }
