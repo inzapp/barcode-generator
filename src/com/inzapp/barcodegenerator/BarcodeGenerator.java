@@ -9,8 +9,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class BarcodeGenerator {
-    private int barcodeWidth = 1080;
-    private int barcodeHeight = 640;
 
     public static void main(String[] args) {
         new BarcodeGenerator().generate("1234asd5");
@@ -18,10 +16,12 @@ public class BarcodeGenerator {
 
     public BufferedImage generate(String content) {
         try {
-            BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.CODE_128, this.barcodeWidth, 1);
-            BufferedImage bufferedImage = new BufferedImage(this.barcodeWidth, this.barcodeHeight, BufferedImage.TYPE_4BYTE_ABGR);
+            int barcodeWidth = 1080;
+            int barcodeHeight = 640;
+            BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.CODE_128, barcodeWidth, 1);
+            BufferedImage bufferedImage = new BufferedImage(barcodeWidth, barcodeHeight, BufferedImage.TYPE_4BYTE_ABGR);
             for (int x = 0; x < 1080; x++) {
-                for (int y = 0; y < this.barcodeHeight; ++y)
+                for (int y = 0; y < barcodeHeight; ++y)
                     bufferedImage.setRGB(x, y, bitMatrix.get(x, 0) ? Byte.MIN_VALUE : Byte.MAX_VALUE);
             }
             ImageIO.write(bufferedImage, "png", new File("barcode.png"));

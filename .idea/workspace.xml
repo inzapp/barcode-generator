@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db2bc925-08d2-4663-9c76-6ac2ca2d1836" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/barcode-generator/BarcodeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BarcodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inzapp/barcodegenerator/BarcodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/inzapp/barcodegenerator/BarcodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inzapp/barcodegenerator/BarcodeGenerator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
