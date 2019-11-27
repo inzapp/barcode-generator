@@ -26,7 +26,7 @@ public class BarcodeGenerator {
     }
 
     public void setBasePath(String basePath) {
-        basePath = basePath.replaceAll("/", "\\.");
+        basePath = basePath.replaceAll("/", "\\\\");
         if (!basePath.endsWith("\\"))
             basePath += "\\";
         this.basePath = basePath;
