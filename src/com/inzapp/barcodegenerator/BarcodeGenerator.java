@@ -15,10 +15,6 @@ public class BarcodeGenerator {
     private int barcodeHeight = 160;
 
     public static void main(String[] args) {
-        BarcodeGenerator barcodeGenerator = new BarcodeGenerator();
-        barcodeGenerator.setBasePath("barcode");
-        String filePath = barcodeGenerator.generate("ajGJ09a8sd)(8ASD8a0d");
-        System.out.println(filePath);
     }
 
     public String getBasePath() {

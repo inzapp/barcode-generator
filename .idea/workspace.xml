@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db2bc925-08d2-4663-9c76-6ac2ca2d1836" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/barcode/1234567890.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/barcode/1234567891.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/barcode-generator/com/inzapp/barcodegenerator/BarcodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/barcode-generator/com/inzapp/barcodegenerator/BarcodeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/inzapp/barcodegenerator/BarcodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inzapp/barcodegenerator/BarcodeGenerator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/zxing-3.4.0.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
