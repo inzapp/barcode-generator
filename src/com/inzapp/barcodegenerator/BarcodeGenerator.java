@@ -43,7 +43,7 @@ public class BarcodeGenerator {
             BufferedImage bufferedImage = new BufferedImage(barcodeWidth, barcodeHeight, BufferedImage.TYPE_BYTE_BINARY);
             for (int x = 0; x < barcodeWidth; x++) {
                 for (int y = 0; y < barcodeHeight; ++y)
-                    bufferedImage.setRGB(x, y, bitMatrix.get(x, 0) ? Byte.MIN_VALUE : Byte.MAX_VALUE);
+                    bufferedImage.setRGB(x, y, bitMatrix.get(x, 0) ? Byte.MAX_VALUE : Byte.MIN_VALUE);
             }
 
             ImageIO.write(bufferedImage, "png", barcodeImgFile);
