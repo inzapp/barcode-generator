@@ -1,4 +1,4 @@
-package com.innerwave.barcodegenerator;
+package com.inzapp.barcodegenerator;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
